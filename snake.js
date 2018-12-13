@@ -60,7 +60,7 @@ function Snake(){
             var d = dist(this.x, this.y, pos.x, pos.y);
             if(d<1){
                 this.total = 0;
-                // this.tail = [];
+                this.tail = [];
                 this.score = 1;
                 localStorage.setItem('score', this.bestScore);
             }
