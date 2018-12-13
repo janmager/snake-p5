@@ -18,9 +18,13 @@ function Snake(){
 
         this.x = this.x + this.xspeed*scl;
         this.y = this.y + this.yspeed*scl;
-
-        this.x = constrain(this.x, 0, width-scl);
-        this.y = constrain(this.y, 0, height-scl);
+        console.log('y='+this.y);
+        // this.x = constrain(this.x, 0, width-scl);
+        // this.y = constrain(this.y, 0, height-scl);
+        if(this.x >= window.windowWidth) this.x = 0;
+        else if(this.x < 0) this.x = window.windowWidth;
+        else if(this.y >= window.windowHeight) this.y = 0;
+        else if(this.y < 0) this.y = window.windowHeight;
     }
 
     this.show = function(){
@@ -56,7 +60,7 @@ function Snake(){
             var d = dist(this.x, this.y, pos.x, pos.y);
             if(d<1){
                 this.total = 0;
-                this.tail = [];
+                // this.tail = [];
                 this.score = 1;
                 localStorage.setItem('score', this.bestScore);
             }
