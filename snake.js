@@ -30,6 +30,7 @@ function Snake(){
     this.show = function(){
         $('.wynik').html('Score: '+this.score);
         $('.bestWynik').html('Best score: '+this.bestScore);
+		$('.newWynik').html('Kejdul pozdrawia serdecznie xSvilen\'a !');
         fill(255);
         for(var i=0; i<this.tail.length; i++){
             rect(this.tail[i].x, this.tail[i].y, scl, scl);
